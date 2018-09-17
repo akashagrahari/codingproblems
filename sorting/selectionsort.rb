@@ -9,6 +9,7 @@ for i in (0..n-1)
 end
 puts "\n"
 
+# find minimum element in each pass at place it at the leftmost point in unsorted array
 
 for i in (0..n-1)
 	min = i
