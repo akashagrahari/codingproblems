@@ -1,14 +1,11 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Stack;
 
 /**
- * Created by akash on 17/9/18.
+ * Created by akash on 18/9/18.
  */
-public class BreadthFirstSearchExample {
-
-    private static Queue<Node> nodeQueue = new LinkedList<>();
+public class DepthFirstSearchExample {
+    private static Stack<Node> nodeStack = new Stack<Node>();
 
     private static class Node {
         int data;
@@ -38,19 +35,17 @@ public class BreadthFirstSearchExample {
         }
     }
 
-    private static void breadthFirstSearch(Node node) {
-        nodeQueue.add(node);
+    private static void depthFirstSearch(Node node) {
+        if(node.isVisited()) {
+            return;
+        }
         node.markVisited();
-        while (!nodeQueue.isEmpty()) {
-            Node element = nodeQueue.remove();
-            System.out.println(element.data);
-            ArrayList<Node> neighbours = element.getNeighbours();
-            for (int i=0; i<neighbours.size(); ++i) {
-                element = neighbours.get(i);
-                if (element!=null && !element.isVisited()) {
-                    nodeQueue.add(element);
-                    element.markVisited();
-                }
+        System.out.println(node.data);
+        ArrayList<Node> neighbours = node.getNeighbours();
+        for (int i = 0; i < neighbours.size(); i++) {
+            Node element = neighbours.get(i);
+            if (element != null) {
+                depthFirstSearch(neighbours.get(i));
             }
         }
     }
@@ -75,6 +70,7 @@ public class BreadthFirstSearchExample {
         node60.addNeighbours(node70);
         node50.addNeighbours(node70);
 
-        breadthFirstSearch(node40);
+        depthFirstSearch(node40);
     }
 }
+
