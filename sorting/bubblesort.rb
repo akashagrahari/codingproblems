@@ -9,7 +9,7 @@ for i in (0..n-1)
 end
 puts "\n"
 
-# Compparing consecutive elements and doing multiple passes of them
+# Comparing consecutive elements and doing multiple passes of them
 
 for i in (0..n-2)
 	# Avoid index out of bounds
