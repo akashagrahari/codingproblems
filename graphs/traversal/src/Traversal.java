@@ -50,8 +50,8 @@ public class Traversal {
     private static class BinaryTree {
 
         private int data;
-        private BinaryTree leftBinaryTree;
-        private BinaryTree rightBinaryTree;
+        public BinaryTree leftBinaryTree;
+        public BinaryTree rightBinaryTree;
 
         BinaryTree() {
         }

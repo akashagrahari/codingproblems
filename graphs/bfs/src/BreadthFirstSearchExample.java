@@ -8,7 +8,7 @@ import java.util.Queue;
  */
 public class BreadthFirstSearchExample {
 
-    private static Queue<Node> nodeQueue = new LinkedList<>();
+    public static Queue<Node> nodeQueue = new LinkedList<>();
 
     private static class Node {
         int data;

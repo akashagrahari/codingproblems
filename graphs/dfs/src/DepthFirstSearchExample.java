@@ -10,7 +10,7 @@ public class DepthFirstSearchExample {
     private static class Node {
         int data;
         boolean visited;
-        ArrayList<Node> neighbours;
+        public ArrayList<Node> neighbours;
 
         public Node(int data) {
             this.data = data;

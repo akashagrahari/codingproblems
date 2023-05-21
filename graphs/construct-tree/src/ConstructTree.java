@@ -13,7 +13,7 @@ public class ConstructTree {
         printPreorder(finalTree);
     }
 
-    private Node buildTree(String inorderSequence, String preorderSequence) {
+    public Node buildTree(String inorderSequence, String preorderSequence) {
         if(inorderSequence.length()==0) {
             return null;
         }
